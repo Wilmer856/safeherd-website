@@ -1,0 +1,19 @@
+{
+    "graphs": [
+        {
+            "name": "bar",
+            "description": "Our bar plot displays the distribution of images for domestic and predators. It gives a quick snapshot of how many images we have for each category, helping us understand the balance in our data for creating an effective and reliable system.",
+            "image": "images/Figure_1-3.png"
+        },
+        {
+            "name": "accuracy",
+            "description": "Our accuracy graph, with metrics reaching 0.99 for accuracy and 0.95 for validation accuracy, showcases the impressive performance of our system in learning to distinguish between friendly animals and potential threats. This high accuracy is crucial for reliable real-time alerts, ensuring the safety of livestock and pets.",
+            "image": "images/Figure_1-2.png"
+        },
+        {
+            "name": "loss",
+            "description": "The loss graph, featuring metrics of 0.002 for loss and 0.15 for validation loss, reflects the efficiency of our system in minimizing mistakes during the learning process. This low loss is a testament to the robustness of our technology, providing accurate alerts to farmers and pet owners and reducing the chances of errors in safeguarding animals.",
+            "image": "images/Figure_1-1.png"
+        }
+    ]
+}

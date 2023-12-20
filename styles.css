@@ -1,0 +1,506 @@
+/* -------------------------- */
+/* Custom Properties */
+/* -------------------------- */
+
+:root {
+  /* colors */
+  --clr-green: 104 27% 25%;
+  --clr-light: 39 92% 95%;
+  --clr-accent: 36 57% 88%;
+  --clr-dark: 36 9% 21%;
+
+  /* fonts */
+  --fs-400: 0.9375rem;
+
+  /* font families */
+  --ff-serif: "Lora", serif;
+  --ff-sans-normal: "Source Sans 3", sans-serif;
+}
+
+@media (min-width: 35em) {
+  :root {
+    --fs-400: 1rem;
+  }
+}
+
+@media (min-width: 45em) {
+  :root {
+    --fs-400: 1.125rem;
+  }
+}
+
+/* -------------------------- */
+/* Reset */
+/* -------------------------- */
+
+/* Box sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-weight: 400;
+}
+
+/* set up the body */
+
+html,body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--ff-sans-normal);
+  font-size: var(--fs-400);
+  color: hsl(var(--clr-dark));
+  background-color: hsl(var(--clr-light));
+  line-height: 1.5;
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  /* position: relative; */
+}
+
+/* make images easier to work with */
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make form elements easier to work with */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Colors */
+
+.bg-light {
+  background-color: hsl(var(--clr-light));
+}
+.bg-accent {
+  background-color: hsl(var(--clr-accent));
+}
+.bg-green {
+  background-color: hsl(var(--clr-green));
+}
+
+.text-light {
+  color: hsl(var(--clr-light));
+}
+
+.text-green {
+  color: hsl(var(--clr-green));
+}
+.text-dark {
+  color: hsl(var(--clr-dark));
+}
+
+/* Typography */
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+
+.ff-sans-normal {
+  font-family: var(--ff-sans-normal);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 4.75px;
+}
+.letter-spacing-2 {
+  letter-spacing: 2.7px;
+}
+.letter-spacing-3 {
+  letter-spacing: 2.35px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+/* Utility */
+
+.flex {
+  display: flex;
+}
+
+/* -------------------------- */
+/* Hero/Tool Section */
+/* -------------------------- */
+
+/* header styles */
+
+.header-pad {
+  padding: 0 8%;
+  width: 100%;
+}
+
+.hero-pad {
+  padding: 1rem 10%;
+}
+
+.result-pad {
+  padding: 3rem 10%;
+}
+
+.hero {
+  height: 25rem;
+  gap: 4rem;
+  padding: 1rem 0;
+}
+
+.logo-section {
+  height: 8rem;
+  width: 100%;
+}
+
+.logo {
+  height: 100%;
+  margin-inline: 0;
+}
+
+@media (max-width: 55em){
+  
+  .hero-pad {
+    padding: 0 6%;
+    width: 100%;
+  }
+  
+  .result-pad {
+    padding: 3rem 6%;
+  }
+
+}
+
+
+
+/* hero/tool styles */
+
+.hero .introduction{
+  flex: 1;
+}
+
+.introduction {
+  display: grid;
+}
+
+.model-tool-img {
+  height: 100%;
+}
+
+.title {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  width: 55rem;
+}
+
+.title-description {
+  width: 50rem;
+}
+
+.model-img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.results {
+  gap: 4rem;
+  height: 35rem;
+  background-color: hsl(var(--clr-light));
+  border-radius: 5px;
+  padding: 3rem;
+}
+
+.results * {
+  flex: 1;
+}
+
+.result-container {
+  background-color: hsl(var(--clr-accent));
+}
+
+.metric-list {
+  list-style: none;
+  width: 100%;
+  gap: 2rem;
+  padding: 0;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0;
+}
+
+.generate-btn {
+  border: none;
+  cursor: pointer;
+  height: 3.5rem;
+  width: 9rem;
+  margin: 2rem 0;
+}
+
+.generate-btn.pressed {
+  pointer-events: none;
+  background-color: hsl(var(--clr-dark));
+}
+
+.progress-bar {
+  height: 2rem;
+  background-color: hsl(var(--clr-accent));
+}
+
+.progress-bar,
+.inner-progress {
+  border-radius: 10px;
+}
+
+.progress-bar .inner-progress {
+  height: 100%;
+  background-color: hsl(var(--clr-green));
+  width: 0;
+  transition: width .8s ease-in;
+}
+
+
+/* Hero media queries */
+@media (max-width: 55em){
+
+  .hero {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .introduction {
+    place-content: center;
+  }
+
+  .title {
+    font-size: 2.3rem;
+    margin-inline: auto;
+    width: min-content;
+  }
+
+  .title-description {
+    font-size: 1.2rem;
+    margin-inline: auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo {
+    margin-inline: auto;
+  }
+
+  .model-tool-img {
+    max-height: 30rem;
+  }
+
+  
+}
+
+/* Results media queries */
+@media (max-width: 55em) {
+  .results {
+    height: 100%;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .metric-item {
+    font-size: 1.1rem;
+  }
+
+  .result-description p {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* -------------------------- */
+/* Benefits Section */
+/* -------------------------- */
+
+.benefits {
+  display: grid;
+  place-content: center;
+  height: 40rem;
+}
+
+.benefit-list {
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.benefit-item {
+  width: 17rem;
+}
+
+.benefits-primary {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.benefits-sub {
+  font-size: 1.1rem;
+  width: 50rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-item-header {
+  font-size: 1.6rem;
+}
+
+.benefit-desc-text {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Benefits media queries */
+@media (max-width: 55em) {
+
+  .benefits {
+    height: auto;
+    text-align: center;
+    padding: 2rem 0.5rem;
+  }
+
+  .benefit-list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .benefits-primary {
+    font-size: 2.2rem;
+  }
+
+  .benefits-sub {
+    width: 100%;
+  }
+
+}
+
+/* -------------------------- */
+/* Data Visualization Section */
+/* -------------------------- */
+
+.visualization {
+  background-color: hsl(var(--clr-accent));
+  padding: 3rem 10%;
+}
+
+.v-container {
+  background-color: hsl(var(--clr-light));
+  padding: 2rem;
+}
+
+.v-flex {
+  margin-top: 1rem;
+}
+
+.graph-con {
+  display: grid;
+  place-content: center;
+  width: 100%;
+}
+
+.btn-graph-con {
+  margin: .5rem 0 1rem 0;
+  justify-content: center;
+  gap: .2rem;
+}
+
+.visualize-primary {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.graph-desc {
+  padding-inline: 10%;
+}
+
+.graph-btn {
+  background: none;
+  border-width: 0 1px 1px 1px;
+  border-color: hsl(var(--clr-dark));
+  cursor: pointer;
+  width: 7rem;
+  transition: all 0.05s ease;
+  box-shadow: 0 3px 0 0 #ccc;
+  outline: none;
+}
+
+.graph-btn:focus,
+.graph-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 0 #ccc;
+}
+
+
+.graph-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Data Visualization media queries */
+@media (max-width: 55em) {
+
+  .visualize-primary {
+    font-size: 2.2rem;
+  }
+
+  .visualization {
+    padding-inline: 4%;
+  }
+
+  .graph-desc {
+    padding-inline: 3%;
+  }
+
+  .graph-sub {
+    font-size: 1.1rem;
+  }
+
+  .v-container {
+    padding: 1.0rem;
+  }
+
+  .graph-img {
+
+  }
+
+}
+
